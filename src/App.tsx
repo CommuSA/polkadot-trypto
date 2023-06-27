@@ -26,6 +26,10 @@ import { animateScroll as scroll, scroller, Link, Element } from "react-scroll";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+import Spline from '@splinetool/react-spline';
+
+
+
 AOS.init({
   once: false,
   mirror: true,
@@ -171,19 +175,25 @@ function App() {
               <img src={Dots} />
             </div>
           </div>
-          <div className="col-span-7 relative pt-10">
-            <div className="h-40 w-40 rounded-full bg-[#DAE9FF] absolute -left-20 z-10"></div>
+          <div className="col-span-1 relative"></div>
+          <div className="col-span-6 relative">
+            {/* <div className="h-40 w-40 rounded-full bg-[#DAE9FF] absolute -left-20 z-10"></div> */}
             <div
               data-aos="fade-left"
               data-aos-duration="1000"
               className="relative z-20 "
+              style={{
+                width:'750',
+                height:'450'
+              }}
             >
-              <img
+              {/* <img
                 loading="lazy"
                 src={StudioRoomImg}
                 alt=""
                 className="rounded-tr-2xl"
-              />
+              /> */}
+              <Spline scene="https://prod.spline.design/hkiadNksSCIARMK6/scene.splinecode" />
             </div>
             <div className="h-40 w-40 bg-[#FFF5DB] rounded-br-[100px] absolute right-20 -bottom-24 z-10"></div>
           </div>
