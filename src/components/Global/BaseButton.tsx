@@ -10,8 +10,7 @@ function BaseButton({
   return (
     <button
       className={`bg-primary text-white text-sm py-3 lg:py-5 px-5 lg:px-10 rounded-full whitespace-nowrap ${className}`}
-    onClick={()=>{
-    }}
+      onClick={() => {}}
     >
       {children}
     </button>
