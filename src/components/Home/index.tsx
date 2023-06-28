@@ -38,9 +38,6 @@ const scrollTo = () => {
   });
 };
 
-await web3Enable("Trypto");
-export const allAccounts = await web3Accounts();
-
 export const Home = () => {
   const [isActive, setActive] = useState(false);
   const navigate = useNavigate();

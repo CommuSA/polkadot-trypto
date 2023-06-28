@@ -7,6 +7,8 @@ import type { InjectedAccountWithMeta } from "@polkadot/extension-inject/types";
 import MenuIcon from "../../assets/icons/menu-icon.svg";
 import Identicon from "@polkadot/react-identicon";
 import { Button, Dropdown, Menu } from "antd";
+import type { MenuProps } from "antd";
+import { useNavigate } from "react-router-dom";
 import Home from "../Home";
 
 interface DeMapProps {
@@ -32,13 +34,29 @@ const scrollTo = () => {
   });
 };
 
-const logout = () => {};
-
 export const DeMap = ({ users }: DeMapProps) => {
   const [isActive, setActive] = useState(false);
+  const navigate = useNavigate();
+
+  const logout = () => {
+    try {
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const onClickMenu = () => {
     setActive(!isActive);
   };
+
+  const items: MenuProps["items"] = [
+    {
+      key: "1",
+      label: "Logout",
+      onClick: logout,
+    },
+  ];
 
   return (
     <div className="container   overflow-x-hidden px-5 scroll-smooth md:mx-auto">
@@ -115,28 +133,18 @@ export const DeMap = ({ users }: DeMapProps) => {
               </Link>
             </li>
             <li className="mr-10 cursor-pointer">
-              {/* <Dropdown
-                overlay={
-                  <Menu>
-                    <Menu.Item key={"logout"}>
-                      <Button onClick={logout} type={"link"}>
-                        Logout
-                      </Button>
-                    </Menu.Item>
-                  </Menu>
-                }
-              > */}
               <Identicon
                 value={users[0].address}
                 size={32}
                 // theme={"substrate"}
               />
-              <span>
-                {users[0].address.substring(0, 4) +
-                  ".." +
-                  users[0].address.slice(-4)}
-              </span>
-              {/* </Dropdown> */}
+              <Dropdown menu={{ items }}>
+                <span>
+                  {users[0].address.substring(0, 4) +
+                    ".." +
+                    users[0].address.slice(-4)}
+                </span>
+              </Dropdown>
             </li>
           </ul>
         </div>
