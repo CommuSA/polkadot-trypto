@@ -25,9 +25,12 @@ import { BaseButton, ServiceCard } from "./components/Global";
 import { animateScroll as scroll, scroller, Link, Element } from "react-scroll";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { web3Accounts, web3Enable } from '@polkadot/extension-dapp';
+import Identicon from '@polkadot/react-identicon';
 
-import Spline from '@splinetool/react-spline';
-
+// polkadot
+await web3Enable('Trypto');
+const allAccounts = await web3Accounts();
 
 
 AOS.init({
@@ -136,6 +139,14 @@ function App() {
                   Dapp
                 </Link>
               </li>
+              <li className="mr-10 cursor-pointer">
+                <Identicon
+                    value={allAccounts[0]?allAccounts[0].address:""}
+                    size={32}
+                    theme={'substrate'}
+                  />
+                  <span>{allAccounts[0]?(allAccounts[0].address.substring(0,4)+".."+allAccounts[0].address.slice(-4)):""}</span>
+              </li>
             </ul>
           </div>
         </div>
@@ -175,25 +186,19 @@ function App() {
               <img src={Dots} />
             </div>
           </div>
-          <div className="col-span-1 relative"></div>
-          <div className="col-span-6 relative">
-            {/* <div className="h-40 w-40 rounded-full bg-[#DAE9FF] absolute -left-20 z-10"></div> */}
+          <div className="col-span-7 relative pt-10">
+            <div className="h-40 w-40 rounded-full bg-[#DAE9FF] absolute -left-20 z-10"></div>
             <div
               data-aos="fade-left"
               data-aos-duration="1000"
               className="relative z-20 "
-              style={{
-                width:'750',
-                height:'450'
-              }}
             >
-              {/* <img
+              <img
                 loading="lazy"
                 src={StudioRoomImg}
                 alt=""
                 className="rounded-tr-2xl"
-              /> */}
-              <Spline scene="https://prod.spline.design/hkiadNksSCIARMK6/scene.splinecode" />
+              />
             </div>
             <div className="h-40 w-40 bg-[#FFF5DB] rounded-br-[100px] absolute right-20 -bottom-24 z-10"></div>
           </div>
