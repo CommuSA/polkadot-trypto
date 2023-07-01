@@ -10,6 +10,7 @@ import { Button, Dropdown, Menu } from "antd";
 import type { MenuProps } from "antd";
 import { useNavigate } from "react-router-dom";
 import Home from "../Home";
+import Platform from "./Platform";
 
 interface DeMapProps {
   users: InjectedAccountWithMeta[];
@@ -140,16 +141,18 @@ export const DeMap = ({ users }: DeMapProps) => {
               />
               <Dropdown menu={{ items }}>
                 <span>
-                  {users[0].address.substring(0, 4) +
-                    ".." +
-                    users[0].address.slice(-4)}
+                  {
+                  `${users[0].address.substring(0, 4)}..${users[0].address.slice(-4)}`
+                  }
                 </span>
               </Dropdown>
             </li>
           </ul>
         </div>
       </div>
-      <div className="bg-white font-averta h-full "> hello</div>
+      <div className="bg-white font-averta h-full ">
+        <Platform />
+      </div>
     </div>
   );
 };
