@@ -15,16 +15,6 @@ await web3Enable("Trypto");
 const allAccounts = await web3Accounts();
 
 export const App = () => {
-  // const navigate = useNavigate();
-
-  // useEffect(() => {
-  //   if (allAccounts) {
-  //     navigate("/DeMap");
-  //   } else {
-  //     navigate("/Home");
-  //   }
-  // }, [allAccounts, navigate]);
-
   return (
     <Router>
       <Routes>
