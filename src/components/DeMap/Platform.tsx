@@ -68,7 +68,10 @@ const SliderBar: React.FC = () => {
         display: "flex",
       }}
     >
-      <div className="SliderBar" style={{ width: 256 }}>
+      <div
+        className="SliderBar"
+        style={{ width: 256, borderRight: "solid 1px rgb(229, 231, 235)" }}
+      >
         <Button
           type="primary"
           onClick={toggleCollapsed}
@@ -80,6 +83,7 @@ const SliderBar: React.FC = () => {
             <MenuFoldOutlined rev={undefined} />
           )}
         </Button>
+
         <Menu
           defaultSelectedKeys={["info"]}
           defaultOpenKeys={["sub1"]}
@@ -87,6 +91,7 @@ const SliderBar: React.FC = () => {
           theme="light"
           inlineCollapsed={collapsed}
           items={items}
+          style={{ borderRight: "none" }}
           onClick={({ key }) => {
             setPageKey(key);
             return 1;
@@ -97,11 +102,15 @@ const SliderBar: React.FC = () => {
     </div>
   );
 };
+
 function switchPage(key: string) {
   switch (key) {
     case "info":
       return <Info />;
-    case "cloud":
+    case "Upload":
+      localStorage.getItem("upload") === null
+        ? localStorage.setItem("upload", "[]")
+        : "";
       return <CloudOSS />;
     default:
       return <CloudOSS />;
