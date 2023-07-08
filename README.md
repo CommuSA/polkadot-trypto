@@ -74,11 +74,16 @@ https://github.com/CommuSA/polkadot-trypto/tree/587c139bba965157f9d33d6b8bf42dbe
 
 ## 队员信息
 Spencer： CEO https://github.com/Jackieyewang 负责算法设计、合约开发、前端开发
+
 Dick: CTO https://github.com/lyd0 负责前后端开发和交互
+
 Wendy : CMO https://github.com/Tron-Di 负责产品思考和调研
+
 Barron : CS https://github.com/guanjiech 首席科学家，负责协议设计和研究
 
 ## Tips
 [Trypto PPT](https://docs.google.com/presentation/d/13mOA3i1bS59xsobaufVEoI6y_on-xLFWQwYAYVIl2gs/edit?usp=sharing)
+
 [Demo](http://trypto.club/)
+
 [TSC-2023](https://github.com/CommuSA/TSC-2023)
