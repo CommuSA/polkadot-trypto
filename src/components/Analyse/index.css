@@ -1,0 +1,43 @@
+.content {
+	padding: 0 100px;
+}
+.blockWrapper {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+}
+.searchWrapper {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 30px;
+}
+.ant-input-wrapper {
+	width: 400px;
+}
+.ant-input-group-wrapper {
+	width: fit-content;
+}
+.searchWrapper .ant-input-group-addon {
+	/* border: none; */
+	border-top-left-radius: 50px;
+	border-bottom-left-radius: 50px;
+	border-right: none;
+}
+.searchWrapper .ant-input-group .ant-input-group-addon {
+	border-color: #eee;
+}
+.ant-input {
+	border-radius: 50px;
+	text-align: center;
+	border-left: none;
+}
+.searchWrapper .ant-input-outlined:focus,
+.searchWrapper .ant-input-outlined:focus-within {
+	border-color: #eee;
+	box-shadow: none;
+}
+.selectWrapper {
+	display: flex;
+	margin-bottom: 20px;
+    padding-left: 10px;
+}

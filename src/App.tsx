@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Home from "./components/Home";
 import DeMap from "./components/DeMap";
+import Analyse from "./components/Analyse";
 import "aos/dist/aos.css";
 import { web3Accounts, web3Enable } from "@polkadot/extension-dapp";
 import {
@@ -20,6 +21,7 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/DeMap" element={<DeMap users={allAccounts} />} />
+        <Route path="/Analyse" element={<Analyse/>} />
       </Routes>
     </Router>
   );
